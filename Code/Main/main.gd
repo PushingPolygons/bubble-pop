@@ -7,11 +7,11 @@ const BUBBLE = preload("res://bubble/bubble.tscn")
 
 func _ready() -> void:
 	timer.timeout.connect(OnTimedOut)
-	timer.wait_time = 2
+	timer.wait_time = 1
 
 func OnTimedOut():
 	spawnbubble()
-	#print("Timed Out")
+	
 	
 
 func spawnbubble():

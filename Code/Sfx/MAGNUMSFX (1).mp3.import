@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cevx1ohiu3smo"
+path="res://.godot/imported/MAGNUMSFX (1).mp3-652f6c4623b64cf699870ec04ccc96c8.mp3str"
+
+[deps]
+
+source_file="res://Sfx/MAGNUMSFX (1).mp3"
+dest_files=["res://.godot/imported/MAGNUMSFX (1).mp3-652f6c4623b64cf699870ec04ccc96c8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
