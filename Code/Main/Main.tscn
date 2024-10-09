@@ -13,7 +13,7 @@ autostart = true
 position = Vector2(905, 487)
 
 [node name="Bubble2" parent="." instance=ExtResource("2_3lgiv")]
-position = Vector2(423, 165)
+position = Vector2(502, 147)
 
 [node name="Bubble3" parent="." instance=ExtResource("2_3lgiv")]
 position = Vector2(345, 550)
