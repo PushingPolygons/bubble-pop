@@ -1,8 +1,10 @@
 extends Area2D
 class_name Bubble
+var main: Main
 
 func Pop():
 	queue_free()
+	main.PlaySound()
 
 func OnClicked(viewport, event, shape_index):
 	if event is InputEventMouseButton:
@@ -13,6 +15,7 @@ func OnClicked(viewport, event, shape_index):
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	input_event.connect(OnClicked)
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
