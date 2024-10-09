@@ -1,6 +1,8 @@
 extends Area2D
 class_name Bubble
 
+var main: Main
+
 func _ready() -> void:
 	input_event.connect(OnClicked)
 
@@ -18,4 +20,5 @@ func OnClicked(viewport, event, shape_id):
 				Pop()
 
 func Pop():
+	main.PlaySound()
 	queue_free()

@@ -1,9 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cd5nxssueqosr"]
+[gd_scene load_steps=3 format=3 uid="uid://cd5nxssueqosr"]
 
 [ext_resource type="Script" path="res://Main/main.gd" id="1_7i0tu"]
+[ext_resource type="AudioStream" uid="uid://bqlfagxpptc6y" path="res://Sfx/pop_04.wav" id="2_3vx45"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_7i0tu")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(322, 410)
+stream = ExtResource("2_3vx45")
