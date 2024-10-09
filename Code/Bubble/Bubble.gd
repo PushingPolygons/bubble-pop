@@ -3,15 +3,16 @@ class_name Bubble
 
 var spd: int = 100
 
-func _ready():
-	mouse_entered.connect(Pop_Bubble)
+func _ready() -> void:
+	input_event.connect(OnClicked);
 
 func _process(delta: float) -> void:
 	position.y -= spd * delta
-	#if Input.is_action_just_pressed("Pop"):
-		#mouse_entered.connect(Pop_Bubble)
 	if position.y < -50:
 		queue_free();
-func Pop_Bubble():
-	if Input.is_action_just_pressed("Pop"):
-		queue_free();
+func OnClicked(viewport, event, shape_id):
+	if event is InputEventMouseButton:
+		if Input.is_action_pressed("Pop"):
+			Pop();
+func Pop():
+	queue_free();
