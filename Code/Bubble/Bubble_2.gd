@@ -1,5 +1,5 @@
 extends Area2D
-class_name Bubble
+class_name Bubble2
 var speed = randf_range(25,125)
 
 func _ready() -> void:
@@ -18,20 +18,4 @@ func OnClicked(viewport, event, shape_id):
 
 func Pop():
 	queue_free()
-	
-	
-
-	
-	
-	
-	
-
-
-
-	
-
-
-
-
-
 	
