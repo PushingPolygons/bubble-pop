@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 
 func SpawnBubble():
 	var bubble_instance = BUBBLE.instantiate()
-	bubble_instance.position = Vector2(randf_range(0, get_viewport().size.x), get_viewport().size.y)
+	bubble_instance.position = Vector2(randf_range(0, get_viewport().size.x), get_viewport().size.y + 42)
 	add_child(bubble_instance)
 
 func OnTimedOut():
