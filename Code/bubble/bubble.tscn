@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://botbbg27fopdj"]
 
 [ext_resource type="Script" path="res://bubble/bubble.gd" id="1_8id8y"]
-[ext_resource type="Texture2D" uid="uid://brsy70u843wyn" path="res://Textures/bubble.png" id="2_xbge5"]
+[ext_resource type="Texture2D" uid="uid://x044bvb08dm6" path="res://Textures/dragon-ball-with-4-stars-logo-F11C43957B-seeklogo.com.png" id="2_uyw63"]
 
 [node name="Bubble" type="Node2D"]
 script = ExtResource("1_8id8y")
@@ -9,4 +9,4 @@ script = ExtResource("1_8id8y")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.00001, 0)
 scale = Vector2(0.357422, 0.359375)
-texture = ExtResource("2_xbge5")
+texture = ExtResource("2_uyw63")
