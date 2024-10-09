@@ -10,33 +10,33 @@ const BUBBLE2 = preload("res://Bubble/Bubble2.tscn")
 
 func _ready() -> void:
 	timer.timeout.connect(OnTimedOut)
-	timer.wait_time = 0.3
+	timer.wait_time = 0.25
 
 
-func Sound():
+func PlaySound():
 	audio_player.play()
-	print("Audio")
+	print("audio")
 	
 func OnTimedOut():
 	SpawnBubble()
 	GetNumber()
-	Sound()
 
 	
 func SpawnBubble():
 	var bubble_instance = BUBBLE.instantiate()
+	bubble_instance.main = self
 	bubble_instance.position = Vector2(randf_range(0, get_viewport().size.x), get_viewport().size.y)
 	add_child(bubble_instance)
 	
 func SpawnSuperBubble():
 	var bubble_instance2 = BUBBLE2.instantiate()
+	bubble_instance2.main = self 
 	bubble_instance2.position = Vector2(randf_range(0, get_viewport().size.x), get_viewport().size.y)
 	add_child(bubble_instance2)
 	
 func GetNumber():
 	var number = randf_range(1, 100)
 	if number>90:
-		print("test")
 		SpawnSuperBubble()
 
 		
