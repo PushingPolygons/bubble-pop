@@ -4,17 +4,24 @@ class_name Main
 const BUBBLE = preload("res://Bubble/Bubble.tscn")
 const BUBBLE2 = preload("res://Bubble/Bubble2.tscn")
 @onready var timer: Timer = $Timer
+@onready var audio_player: AudioStreamPlayer2D = $AudioPlayer
+
 
 
 func _ready() -> void:
 	timer.timeout.connect(OnTimedOut)
 	timer.wait_time = 0.3
 
+
+func Sound():
+	audio_player.play()
+	print("Audio")
 	
 func OnTimedOut():
 	SpawnBubble()
 	GetNumber()
-	
+	Sound()
+
 	
 func SpawnBubble():
 	var bubble_instance = BUBBLE.instantiate()

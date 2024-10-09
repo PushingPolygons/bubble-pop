@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cd5nxssueqosr"]
+[gd_scene load_steps=3 format=3 uid="uid://cd5nxssueqosr"]
 
 [ext_resource type="Script" path="res://Main/Main.gd" id="1_4iosu"]
+[ext_resource type="AudioStream" uid="uid://bqlfagxpptc6y" path="res://Sfx/pop_04.wav" id="2_tsjdq"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_4iosu")
@@ -8,14 +9,5 @@ script = ExtResource("1_4iosu")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="Label" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -126.0
-offset_right = 126.0
-offset_bottom = 138.0
-grow_horizontal = 2
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_tsjdq")
