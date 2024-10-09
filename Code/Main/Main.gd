@@ -3,6 +3,7 @@ class_name Main
 
 const BUBBLE = preload("res://Bubble/Bubble.tscn")
 @onready var timer: Timer = $Timer
+@onready var audio_stream: AudioStreamPlayer2D = $AudioStream
 
 func _ready() -> void:
 	randomize()
@@ -15,6 +16,7 @@ func spawnBubble():
 	
 	bubble_instance.position = Vector2(screenLen, spawnHeight)
 	SizeOfBubble(bubble_instance)
+	bubble_instance.main = self
 	add_child(bubble_instance)
 
 func OnTimedOut():
@@ -30,3 +32,5 @@ func SizeOfBubble(bubble_instance):
 	else:
 		bubble_instance.scale = Vector2(0.25, 0.25)
 	
+func PlaySound():
+	audio_stream.play()
