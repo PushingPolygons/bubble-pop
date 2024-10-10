@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cd5nxssueqosr"]
 
 [ext_resource type="Script" path="res://Main/main.gd" id="1_he6eo"]
-[ext_resource type="PackedScene" uid="uid://bmduw1omvgqj8" path="res://Bubble/Bubble.tscn" id="2_3lgiv"]
+[ext_resource type="AudioStream" uid="uid://bqlfagxpptc6y" path="res://Sfx/pop_04.wav" id="2_swx1n"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_he6eo")
@@ -9,11 +9,6 @@ script = ExtResource("1_he6eo")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="Bubble" parent="." instance=ExtResource("2_3lgiv")]
-position = Vector2(905, 487)
-
-[node name="Bubble2" parent="." instance=ExtResource("2_3lgiv")]
-position = Vector2(502, 147)
-
-[node name="Bubble3" parent="." instance=ExtResource("2_3lgiv")]
-position = Vector2(345, 550)
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(46, 251)
+stream = ExtResource("2_swx1n")
