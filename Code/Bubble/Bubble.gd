@@ -6,6 +6,7 @@ var spd: int = 100
 var id: int 
 
 func _ready() -> void:
+	print(str(main))
 	randomize()
 	id = randi()
 	input_event.connect(OnClicked);
