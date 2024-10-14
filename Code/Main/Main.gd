@@ -30,9 +30,11 @@ func SizeOfBubble(bubble_instance):
 	
 	if (randNum == 1):
 		bubble_instance.scale = Vector2(0.5, 0.5)
+		bubble_instance.modulate = Color.BLUE_VIOLET
 		bubble_instance.delta = 3
 	elif (randNum == 2):
 		bubble_instance.scale = Vector2(0.333, 0.333)
+		bubble_instance.modulate = Color.DARK_SLATE_GRAY
 		bubble_instance.delta = 1
 	else:
 		bubble_instance.scale = Vector2(0.25, 0.25)
