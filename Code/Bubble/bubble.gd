@@ -4,7 +4,8 @@ var main: Main
 
 func Pop():
 	queue_free()
-	main.PlaySound()
+	main.PlaySound(position)
+	main.UpdateScore(1)
 
 func OnClicked(viewport, event, shape_index):
 	if event is InputEventMouseButton:

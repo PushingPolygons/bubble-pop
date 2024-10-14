@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cd5nxssueqosr"]
+[gd_scene load_steps=6 format=3 uid="uid://cd5nxssueqosr"]
 
 [ext_resource type="Script" path="res://Main/main.gd" id="1_nmn01"]
 [ext_resource type="AudioStream" uid="uid://bqlfagxpptc6y" path="res://Sfx/pop_04.wav" id="2_nomfx"]
+[ext_resource type="FontFile" uid="uid://dhes6cbhxkqev" path="res://Fonts/heav.ttf" id="3_7qqr0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nvs8y"]
+content_margin_left = 20.0
+content_margin_right = 20.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mb37p"]
+font = ExtResource("3_7qqr0")
+font_size = 30
 
 [node name="Main" type="Node"]
 script = ExtResource("1_nmn01")
@@ -11,3 +21,23 @@ autostart = true
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_nomfx")
+
+[node name="BubbleNode" type="Node2D" parent="."]
+
+[node name="ScoreBoard" type="PanelContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.0
+offset_right = 46.0
+offset_bottom = 40.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nvs8y")
+
+[node name="ScoreUI" type="Label" parent="ScoreBoard"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_mb37p")
+horizontal_alignment = 1
+vertical_alignment = 1
