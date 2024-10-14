@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cd5nxssueqosr"]
+[gd_scene load_steps=5 format=3 uid="uid://cd5nxssueqosr"]
 
 [ext_resource type="Script" path="res://Main/Main.gd" id="1_4iosu"]
 [ext_resource type="AudioStream" uid="uid://bqlfagxpptc6y" path="res://Sfx/pop_04.wav" id="2_tsjdq"]
+[ext_resource type="FontFile" uid="uid://bun4wwgbvapvw" path="res://Fonts/frau1.ttf" id="3_g6n2i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0030e"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_4iosu")
@@ -11,3 +14,19 @@ autostart = true
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_tsjdq")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.0
+offset_right = 46.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_g6n2i")
+text = "0123456789"
+label_settings = SubResource("LabelSettings_0030e")
