@@ -19,5 +19,6 @@ func OnClicked(viewport, event, shape_id):
 				Pop()
 
 func Pop():
+	main.UpdateScore(3)
 	main.PlaySound()
 	queue_free()

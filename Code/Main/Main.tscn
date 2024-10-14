@@ -1,7 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://cd5nxssueqosr"]
+[gd_scene load_steps=6 format=3 uid="uid://cd5nxssueqosr"]
 
 [ext_resource type="Script" path="res://Main/main.gd" id="1_ch3at"]
 [ext_resource type="AudioStream" uid="uid://rvu5h6w4qqlx" path="res://Sfx/pop_11.wav" id="3_abn7e"]
+[ext_resource type="FontFile" uid="uid://df7bv83w00cry" path="res://Fonts/airstrip.ttf" id="3_u4857"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctt8m"]
+bg_color = Color(0.745098, 0.505882, 0.670588, 1)
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_aqb6v"]
+line_spacing = 30.0
+font = ExtResource("3_u4857")
+font_size = 40
+font_color = Color(0.670588, 0, 0.831373, 0.603922)
+shadow_size = 4
+shadow_color = Color(0.364706, 0.678431, 0.819608, 1)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ch3at")
@@ -11,3 +27,23 @@ autostart = true
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_abn7e")
+
+[node name="ScoreBoard" type="PanelContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_right = -38.0
+offset_bottom = 39.0
+grow_horizontal = 2
+size_flags_horizontal = 8
+mouse_filter = 2
+
+[node name="ScoreUI" type="Label" parent="ScoreBoard"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_ctt8m")
+text = "0"
+label_settings = SubResource("LabelSettings_aqb6v")
+
+[node name="BubbleNode" type="Node2D" parent="."]
