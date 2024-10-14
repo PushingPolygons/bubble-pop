@@ -1,7 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://cd5nxssueqosr"]
+[gd_scene load_steps=6 format=3 uid="uid://cd5nxssueqosr"]
 
 [ext_resource type="Script" path="res://Main/Main.gd" id="1_jhtbm"]
 [ext_resource type="AudioStream" uid="uid://pic0rqdwcyd5" path="res://Sfx/pop_01.wav" id="2_3aanh"]
+[ext_resource type="FontFile" uid="uid://df7bv83w00cry" path="res://Fonts/airstrip.ttf" id="3_yud8w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0td2"]
+bg_color = Color(0.891713, 0.361552, 0.783558, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.917275, 0.711695, 0.991065, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_xj845"]
+font = ExtResource("3_yud8w")
+font_size = 30
+font_color = Color(0.917647, 0.709804, 0.992157, 1)
+outline_color = Color(1, 1, 0.396078, 1)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_jhtbm")
@@ -12,3 +31,21 @@ autostart = true
 
 [node name="AudioStream" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_3aanh")
+
+[node name="ScoreBoard" type="PanelContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.0
+offset_right = 39.0
+offset_bottom = 45.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m0td2")
+
+[node name="ScoreUI" type="Label" parent="ScoreBoard"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "I like video games"
+label_settings = SubResource("LabelSettings_xj845")
+horizontal_alignment = 1
