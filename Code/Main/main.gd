@@ -16,7 +16,7 @@ func PlaySound():
 
 func OnTimedOut():
 	SpawnBubble()
-	audio_player.play()
+	#audio_player.play()
 
 func SpawnBubble():
 	var bubble_instance = BUBBLE.instantiate()
