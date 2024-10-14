@@ -28,6 +28,7 @@ func Pop():
 
 func _process(delta: float) -> void:
 	if (killtimer < 0):
+		main.UpdateScore(1);
 		main.PlaySound()
 		queue_free()
 	if(killtimer > 0):
