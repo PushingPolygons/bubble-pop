@@ -22,7 +22,11 @@ script = ExtResource("1_mwftl")
 autostart = true
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(47, 330)
 stream = ExtResource("3_1xmdd")
+
+[node name="BubbleNode" type="Node2D" parent="."]
+position = Vector2(36, 25)
 
 [node name="ScoreBoard" type="PanelContainer" parent="."]
 anchors_preset = 5
@@ -32,6 +36,7 @@ offset_left = -46.0
 offset_right = 46.0
 offset_bottom = 40.0
 grow_horizontal = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8bxem")
 
 [node name="ScoreUI" type="Label" parent="ScoreBoard"]
