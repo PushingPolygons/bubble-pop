@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7ul66ouw1y76"]
+
+[ext_resource type="Script" path="res://Cat/Cat.gd" id="1_16qrp"]
+
+[node name="Cat" type="Node2D"]
+script = ExtResource("1_16qrp")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(-248, -199, -233, -421, -82, -206, 124, -199, 209, -407, 254, -190, 474, -80, 279, 120, -53, 122, -356, -17, -246, -201)

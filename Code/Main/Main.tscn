@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cd5nxssueqosr"]
+[gd_scene load_steps=7 format=3 uid="uid://cd5nxssueqosr"]
 
 [ext_resource type="Script" path="res://Main/main.gd" id="1_he6eo"]
 [ext_resource type="AudioStream" uid="uid://bqlfagxpptc6y" path="res://Sfx/pop_04.wav" id="2_swx1n"]
 [ext_resource type="FontFile" uid="uid://dhes6cbhxkqev" path="res://Fonts/heav.ttf" id="3_etsjn"]
+[ext_resource type="PackedScene" uid="uid://b7ul66ouw1y76" path="res://Cat/Cat.tscn" id="4_auptc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tuygr"]
 content_margin_left = 30.0
@@ -26,17 +27,20 @@ script = ExtResource("1_he6eo")
 autostart = true
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(98, 273)
+position = Vector2(195, 303)
 stream = ExtResource("2_swx1n")
+
+[node name="BubbleNode" type="Node2D" parent="."]
 
 [node name="ScoreBoard" type="PanelContainer" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -138.0
-offset_right = 139.0
-offset_bottom = 60.0
+offset_left = -168.5
+offset_right = 168.5
+offset_bottom = 74.0
 grow_horizontal = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tuygr")
 
 [node name="ScoreUI" type="Label" parent="ScoreBoard"]
@@ -44,3 +48,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "0123456789"
 label_settings = SubResource("LabelSettings_6b8b6")
+
+[node name="Cat" parent="." instance=ExtResource("4_auptc")]
+visible = false
+position = Vector2(806, 373)
+scale = Vector2(0.217873, 0.217873)
