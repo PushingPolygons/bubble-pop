@@ -1,9 +1,12 @@
 extends Node
 class_name Main
 
+var score: int = 0
 const BUBBLE = preload("res://Bubble/Bubble.tscn")
 @onready var timer: Timer = $Timer
+@onready var score_ui: Label = $ScoreBoard/ScoreUI
 @onready var audio_stream: AudioStreamPlayer2D = $AudioStream
+
 
 func _ready() -> void:
 	randomize()
@@ -34,3 +37,7 @@ func SizeOfBubble(bubble_instance):
 	
 func PlaySound():
 	audio_stream.play()
+	
+func updateScore(score_delta: int):
+	score += score_delta;
+	score_ui.text = str(score)

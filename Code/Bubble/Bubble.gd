@@ -4,6 +4,7 @@ class_name Bubble
 var main: Main
 var spd: int = 100
 var id: int 
+var delta: int = 3
 
 func _ready() -> void:
 	randomize()
@@ -20,4 +21,5 @@ func OnClicked(viewport, event, shape_id):
 			Pop()
 func Pop():
 	main.PlaySound()
+	main.updateScore(delta)
 	queue_free();
