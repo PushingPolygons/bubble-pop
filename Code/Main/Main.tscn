@@ -1,9 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://cd5nxssueqosr"]
+[gd_scene load_steps=7 format=3 uid="uid://cd5nxssueqosr"]
 
 [ext_resource type="Script" path="res://Main/main.gd" id="1_gjxk0"]
+[ext_resource type="AudioStream" uid="uid://bqlfagxpptc6y" path="res://Sfx/pop_04.wav" id="2_jqxs1"]
+[ext_resource type="FontFile" uid="uid://bvfnxo5xy34jb" path="res://Fonts/breakaway.ttf" id="3_lp1v2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohkqg"]
+bg_color = Color(0.251991, 0.680402, 0.620778, 1)
+border_color = Color(2.69532e-06, 0.934713, 0.736126, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_42drx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f15pm"]
+font = ExtResource("3_lp1v2")
+font_size = 65
+font_color = Color(1, 0.78, 0.12, 1)
+outline_color = Color(0.305833, 0.15, 1, 1)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_gjxk0")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_jqxs1")
+
+[node name="ScoreBroad" type="PanelContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -25.0
+offset_top = -11.0
+offset_right = 256.0
+offset_bottom = 77.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ohkqg")
+
+[node name="ScoreUI" type="Label" parent="ScoreBroad"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_42drx")
+text = "0123456789"
+label_settings = SubResource("LabelSettings_f15pm")
