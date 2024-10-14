@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://cd5nxssueqosr"]
+
+[ext_resource type="Script" path="res://Main/Main.gd" id="1_4iosu"]
+[ext_resource type="AudioStream" uid="uid://bqlfagxpptc6y" path="res://Sfx/pop_04.wav" id="2_tsjdq"]
+[ext_resource type="FontFile" uid="uid://by1t80mnq4jeq" path="res://Fonts/frau2.ttf" id="3_2hh6d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l63d7"]
+bg_color = Color(0.809053, 0.515708, 0.404792, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4sqfw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0030e"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_4iosu")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_tsjdq")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.0
+offset_right = 46.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l63d7")
+
+[node name="Label" type="Label" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_2hh6d")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4sqfw")
+text = "0123456789"
+label_settings = SubResource("LabelSettings_0030e")
