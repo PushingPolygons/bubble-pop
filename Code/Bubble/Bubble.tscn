@@ -7,6 +7,7 @@
 radius = 115.741
 
 [node name="Bubble" type="Area2D"]
+y_sort_enabled = true
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_2ysjb")
 
