@@ -5,7 +5,7 @@ var main: Main
 
 var speed = randf_range(25,125)
 @onready var timer: Timer = $Timer
-
+const Main = preload("res://Main/Main.gd")
 
 func _ready() -> void:
 	input_event.connect(OnClicked)

@@ -2,7 +2,7 @@ extends Area2D
 class_name Bubble2
 var speed = randf_range(25,125)
 @onready var timer: Timer = $Timer
-
+const Main = preload("res://Main/Main.gd")
 
 var main: Main
 
