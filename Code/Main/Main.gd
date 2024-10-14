@@ -6,7 +6,7 @@ const BUBBLE = preload("res://Bubble/Bubble.tscn")
 @onready var timer: Timer = $Timer
 @onready var score_ui: Label = $ScoreBoard/ScoreUI
 @onready var audio_stream: AudioStreamPlayer2D = $AudioStream
-
+@onready var bubble_node: Node2D = $"BubbleNode"
 
 func _ready() -> void:
 	randomize()
@@ -20,7 +20,7 @@ func spawnBubble():
 	bubble_instance.position = Vector2(screenLen, spawnHeight)
 	SizeOfBubble(bubble_instance)
 	bubble_instance.main = self
-	add_child(bubble_instance)
+	bubble_node.add_child(bubble_instance)
 
 func OnTimedOut():
 	spawnBubble()
@@ -40,9 +40,10 @@ func SizeOfBubble(bubble_instance):
 		bubble_instance.scale = Vector2(0.25, 0.25)
 		bubble_instance.delta = -3
 	
-func PlaySound():
+func PlaySound(position):
+	audio_stream.pitch_scale = randf_range(0.7, 1.3)
 	audio_stream.play()
-	
+
 func updateScore(score_delta: int):
 	score += score_delta;
 	score_ui.text = str(score)

@@ -20,6 +20,7 @@ func OnClicked(viewport, event, shape_id):
 		if Input.is_action_pressed("Pop"):
 			Pop()
 func Pop():
-	main.PlaySound()
+	var bub_position = Vector2(position.x, position.y)
+	main.PlaySound(bub_position)
 	main.updateScore(delta)
 	queue_free();
