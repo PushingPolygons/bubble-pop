@@ -18,6 +18,8 @@ script = ExtResource("1_7i0tu")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="BubbleNode" type="Node2D" parent="."]
+
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(322, 410)
 stream = ExtResource("2_3vx45")
