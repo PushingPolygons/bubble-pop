@@ -20,23 +20,31 @@ script = ExtResource("1_t3c8i")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(596, 299)
-stream = ExtResource("2_s0a3c")
+[node name="BubbleNode" type="Node2D" parent="."]
 
 [node name="ScoreBoard" type="PanelContainer" parent="."]
-anchors_preset = 5
+z_index = 1
+z_as_relative = false
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-offset_left = -79.0
-offset_right = -78.0
-offset_bottom = 51.0
+anchor_bottom = 1.0
+offset_left = -137.5
+offset_top = -51.0
+offset_right = 137.5
 grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rylos")
 
 [node name="ScoreUI" type="Label" parent="ScoreBoard"]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 8
 text = "123456789"
 label_settings = SubResource("LabelSettings_blrgf")
 horizontal_alignment = 1
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_s0a3c")
