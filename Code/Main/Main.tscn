@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cd5nxssueqosr"]
+[gd_scene load_steps=4 format=3 uid="uid://cd5nxssueqosr"]
 
 [ext_resource type="Script" path="res://Main/main.gd" id="1_mwftl"]
 [ext_resource type="PackedScene" uid="uid://x7npk1i7diym" path="res://Bubble/Bubble.tscn" id="2_finbm"]
+[ext_resource type="AudioStream" uid="uid://pic0rqdwcyd5" path="res://Sfx/pop_01.wav" id="3_1xmdd"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_mwftl")
@@ -11,3 +12,6 @@ autostart = true
 
 [node name="Bubble" parent="." instance=ExtResource("2_finbm")]
 position = Vector2(465, 382)
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_1xmdd")

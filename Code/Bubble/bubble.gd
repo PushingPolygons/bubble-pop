@@ -1,8 +1,11 @@
 extends Area2D
 class_name Bubble
 
+var main: Main
+
 func _ready() -> void:
 	input_event.connect(OnClicked)
+
 
 func _process(delta: float) -> void:
 	position.y -= 100 * delta
@@ -16,6 +19,6 @@ func OnClicked(viewport, event, shape_id):
 				print("Pop!")
 				Pop()
 
-
 func Pop():
+	main.PlaySound()
 	queue_free()
