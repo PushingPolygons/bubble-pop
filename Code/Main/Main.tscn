@@ -1,8 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cd5nxssueqosr"]
+[gd_scene load_steps=6 format=3 uid="uid://cd5nxssueqosr"]
 
 [ext_resource type="Script" path="res://Main/Main.gd" id="1_4iosu"]
 [ext_resource type="AudioStream" uid="uid://bqlfagxpptc6y" path="res://Sfx/pop_04.wav" id="2_tsjdq"]
-[ext_resource type="FontFile" uid="uid://bun4wwgbvapvw" path="res://Fonts/frau1.ttf" id="3_g6n2i"]
+[ext_resource type="FontFile" uid="uid://dhes6cbhxkqev" path="res://Fonts/heav.ttf" id="3_2su5i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tngs0"]
+bg_color = Color(0.846696, 0.46602, 0.558459, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_0030e"]
 
@@ -15,18 +21,25 @@ autostart = true
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_tsjdq")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="ScoreUI" type="PanelContainer" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -46.0
-offset_right = 46.0
-offset_bottom = 40.0
+offset_left = -21.0
+offset_right = 69.0
+offset_bottom = 19.0
 grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tngs0")
 
-[node name="Label" type="Label" parent="PanelContainer"]
+[node name="Score" type="Label" parent="ScoreUI"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("3_g6n2i")
+theme_override_fonts/font = ExtResource("3_2su5i")
+theme_override_font_sizes/font_size = 8
 text = "0123456789"
 label_settings = SubResource("LabelSettings_0030e")
+horizontal_alignment = 1
+vertical_alignment = 1
+max_lines_visible = 12
+visible_characters = 12
+visible_ratio = 1.2

@@ -11,8 +11,9 @@ func _ready() -> void:
 
 
 func PlaySound():
+	audio_player.pitch_scale = randf_range(0.7, 1.3)
 	audio_player.play()
-	print("audio")
+	print(audio_player.pitch_scale)
 	
 func OnTimedOut():
 	SpawnBubble()
@@ -36,7 +37,3 @@ func GetNumber():
 	var number = randf_range(1, 100)
 	if number>90:
 		SpawnSuperBubble()
-		
-
-
-		
