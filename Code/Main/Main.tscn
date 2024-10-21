@@ -1,7 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://cd5nxssueqosr"]
+[gd_scene load_steps=6 format=3 uid="uid://cd5nxssueqosr"]
 
 [ext_resource type="Script" path="res://Main/main.gd" id="1_ch183"]
 [ext_resource type="AudioStream" uid="uid://wuqj4bg6x5bf" path="res://Sfx/pop_00.wav" id="2_hiohx"]
+[ext_resource type="FontFile" uid="uid://dhes6cbhxkqev" path="res://Fonts/heav.ttf" id="3_vbuln"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ap144"]
+content_margin_left = 33.0
+content_margin_right = 33.0
+content_margin_bottom = 10.0
+bg_color = Color(0.356863, 0.156863, 0.6, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.862745, 0.517647, 1, 1)
+corner_radius_top_left = 33
+corner_radius_top_right = 33
+corner_radius_bottom_right = 33
+corner_radius_bottom_left = 33
+
+[sub_resource type="LabelSettings" id="LabelSettings_im56k"]
+font = ExtResource("3_vbuln")
+font_size = 43
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ch183")
@@ -11,3 +31,21 @@ autostart = true
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_hiohx")
+
+[node name="UI" type="PanelContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.0
+offset_right = 127.0
+offset_bottom = 52.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="UI"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ap144")
+text = "0"
+label_settings = SubResource("LabelSettings_im56k")
+horizontal_alignment = 1
+vertical_alignment = 1

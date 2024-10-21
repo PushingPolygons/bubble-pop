@@ -2,6 +2,7 @@ extends Area2D
 class_name Bubble
 
 var audio: AudioStreamPlayer2D
+var main: Main
 
 func _ready() -> void:
 	input_event.connect(OnClicked)
@@ -11,6 +12,7 @@ func OnClicked(_viewport, event, _shape):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
 				pop()
+				main.IncreaseScore()
 				print("Player clicked down.")
 			else:
 				print("Player Clicked Up.")
